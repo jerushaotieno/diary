@@ -7,10 +7,11 @@ import { Entry } from '../entry';
   styleUrls: ['./entry.component.css']
 })
 export class EntryComponent implements OnInit {
+
   diaryEntry:Entry[] = [
-    {id:1, name:'Daily Positive Affirmation', description:'Encourage yourself daily'},
-    {id:2, name:'Daily Study', description:'Choose an area of academic study to handle'},
-    {id:3, name:'Daily Workout', description:'Plan for daily physical exercises'}
+    new Entry(1, 'Daily Positive Affirmation', 'Encourage yourself daily', new Date(2022, 3,14)),
+    new Entry(2, 'Daily Study', 'Choose an area of academic study to handle', new Date(2022, 3,14)),
+    new Entry(3, 'Daily Workout', 'Plan for daily physical exercises', new Date(2022,3,14))
   ];
 
   toggleDetails(index:number){
@@ -21,6 +22,16 @@ export class EntryComponent implements OnInit {
     if (isComplete) {
       this.diaryEntry.splice(index,1);
     }
+
+    deleteEntry(isComplete, index);{
+      if (isComplete) {
+        let toDelete = confirm(`Are you sure you want to delete ${this.diaryEntry[index].name}?`)
+  
+        if (toDelete){
+          this.diaryEntry.splice(index,1)
+        }
+      }
+    }
   }
 
   constructor() { }
@@ -29,3 +40,7 @@ export class EntryComponent implements OnInit {
   }
 
 }
+function deleteEntry(isComplete: any, index: number) {
+  throw new Error('Function not implemented.');
+}
+

@@ -8,10 +8,15 @@ import { Entry } from '../entry';
 })
 export class EntryDetailComponent implements OnInit {
 
-  @Input() entry: Entry;
+  @Input()
+  entry!: Entry;
   @Output() isComplete = new EventEmitter<boolean>();
 
   entryComplete(complete:boolean){
+    this.isComplete.emit(complete);
+  }
+
+  entryDelete(complete:boolean){
     this.isComplete.emit(complete);
   }
 

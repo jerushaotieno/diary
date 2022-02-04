@@ -7,10 +7,11 @@ import { Entry } from './entry';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   diaryEntry:Entry[] = [
-    {id:1, name:'Daily Positive Affirmation'},
-    {id:2, name:'Daily Study'},
-    {id:3, name:'Daily Workout'}
+    new Entry(1, 'Daily Positive Affirmation', 'Encourage yourself daily', new Date(2022, 3,14)),
+    new Entry(2, 'Daily Study', 'Choose an area of academic study to handle', new Date(2022, 3,14)),
+    new Entry(3, 'Daily Workout', 'Plan for daily physical exercises', new Date(2022,3,14))
   ];
 
 }
