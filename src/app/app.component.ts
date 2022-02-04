@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Diary';
+  diaryEntry:string[];
+
+  constructor(){
+    this.diaryEntry = ['Daily Positive Affirmation', ' Daily Study', ' Daily Workout']
+  }
 }
