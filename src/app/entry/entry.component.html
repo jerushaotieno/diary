@@ -5,7 +5,7 @@
       <div *ngFor='let entry of diaryEntry; let i = index'>
         <li>{{entry.name}}</li>
         <button (click)='toggleDetails(i)'>Toggle Details</button>
-        <app-entry-detail *ngIf='entry.showDescription' [entry]='entry'></app-entry-detail>
+        <app-entry-detail *ngIf='entry.showDescription' [entry]='entry' (isComplete) = 'completeGoal($event,i)></app-entry-detail>
       </div>
     </ul>
     <p *ngIf='entry.length > 3'>You have too many diary entries</p>

@@ -13,6 +13,16 @@ export class EntryComponent implements OnInit {
     {id:3, name:'Daily Workout', description:'Plan for daily physical exercises'}
   ];
 
+  toggleDetails(index:number){
+    this.diaryEntry[index].showDescription = !this.diaryEntry[index].showDescription;
+  }
+
+  completeGoal(isComplete: any, index:number){
+    if (isComplete) {
+      this.diaryEntry.splice(index,1);
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
