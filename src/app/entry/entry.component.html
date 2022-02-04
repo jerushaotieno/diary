@@ -4,6 +4,7 @@
     <ul>
       <li *ngFor='let entry of diaryEntry'>
         {{entry.name}}
+        <app-entry-detail [entry]='entry'></app-entry-detail>
       </li>
     </ul>
   </div>
