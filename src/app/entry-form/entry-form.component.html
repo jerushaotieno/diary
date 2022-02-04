@@ -1,0 +1,51 @@
+<!-- <div class="container-fluid">
+    <h2 class="text-center">Create a New Diary Entry</h2>
+    <hr>
+    <form>
+        <div class="form-group">
+  
+            <label for="diaryEntry">Diary Entry</label>
+            <input type="text" required class="form-control" id="name">
+  
+        </div>
+        <div class="form-group">
+  
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="4" required></textarea>
+  
+        </div>
+        <div class="form-group">
+            <label for="complete">Completion</label>
+            <input type='date' id="complete" required>
+  
+        </div>
+    </form>
+  </div> -->
+
+  <div class="container-fluid">
+    <h2 class="text-center">Create a New Diary Entry</h2>
+    <hr>
+    <form #entryForm='ngForm'>
+        <div class="form-group">
+  
+            <label for="name">Diary Entry</label>
+            <input type="text" required class="form-control" id="name" [(ngModel)]="newEntry.name" name="name">
+  
+  <!-- Testing to see if we get any data -->
+            Display {{newEntry.name}}
+        </div>
+        <div class="form-group">
+  
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="4" required></textarea>
+  
+        </div>
+        <div class="form-group">
+  
+            <label for="complete">Completion</label>
+            <input type='date' id="complete" required>
+  
+        </div>
+        <button type="submit" class="btn btn-success">Add Diary Entry</button>
+    </form>
+  </div>
