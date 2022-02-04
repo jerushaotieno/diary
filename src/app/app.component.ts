@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Entry } from './entry';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  diaryEntry:string[];
+  diaryEntry:Entry[] = [
+    {id:1, name:'Daily Positive Affirmation'},
+    {id:2, name:'Daily Study'},
+    {id:3, name:'Daily Workout'}
+  ];
 
-  constructor(){
-    this.diaryEntry = ['Daily Positive Affirmation', ' Daily Study', ' Daily Workout']
-  }
 }

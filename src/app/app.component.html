@@ -1,8 +1,10 @@
 <div>
   <h1>Diary Entries</h1>
+  <hr>
   <ul>
     <li *ngFor='let entry of diaryEntry'>
-      {{entry}}
+      {{entry.name}}
     </li>
   </ul>
+  <p *ngIf='diaryEntry.length > 3'>Your entries are too many</p>
 </div>
