@@ -2,9 +2,11 @@
     <h1>Diary Entries</h1>
     <hr>
     <ul>
-      <li *ngFor='let entry of diaryEntry'>
-        {{entry.name}}
-        <app-entry-detail [entry]='entry'></app-entry-detail>
-      </li>
+      <div *ngFor='let entry of diaryEntry; let i = index'>
+        <li>{{entry.name}}</li>
+        <button (click)='toggleDetails(i)'>Toggle Details</button>
+        <app-entry-detail *ngIf='entry.showDescription' [entry]='entry'></app-entry-detail>
+      </div>
     </ul>
+    <p *ngIf='entry.length > 3'>You have too many diary entries</p>
   </div>
